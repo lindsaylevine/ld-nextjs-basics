@@ -20,11 +20,12 @@ export default function Home({ message }) {
 
 export async function getStaticProps() {
   let message = "Nothing returned";
-  let showFeature = await client.variation(
-    "test-flag",
-    { key: "brian@launchdarkly.com" },
-    false
-  );
+  // let showFeature = await client.variation(
+  //   "test-flag",
+  //   { key: "brian@launchdarkly.com" },
+  //   false
+  // );
+  const showFeature = false
   if (showFeature) {
     message = "The flag is on";
   } else {

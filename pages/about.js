@@ -22,17 +22,17 @@ export default function About({ frontmatter, markdownBody }) {
 }
 
 export async function getStaticProps() {
-  let loadPage = await client.variation(
-    "new-about-us",
-    { key: "brian@launchdarkly.com" },
-    false
-  );
-  const content = await import(`../content/${loadPage}.md`);
-  const data = matter(content.default);
+  // let loadPage = await client.variation(
+  //   "new-about-us",
+  //   { key: "brian@launchdarkly.com" },
+  //   false
+  // );
+  // const content = await import(`../content/${loadPage}.md`);
+  // const data = matter(content.default);
   return {
     props: {
-      frontmatter: data.data,
-      markdownBody: data.content,
+      frontmatter: { title: '' },
+      markdownBody: '## some markdown'
     },
   };
 }
